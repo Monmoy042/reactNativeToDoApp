@@ -6,7 +6,7 @@ import SignUpForm from "./app/components/SignUpForm";
 
 const App = () => {
   return (
-    <View style={{ flex: 1, paddingTop: 60 }}>
+    <View style={{ flex: 1, paddingTop: 80 }}>
       <View style={{ height: 80 }}>
         <FormHeader
           leftHeading={"Welcome"}
@@ -14,7 +14,13 @@ const App = () => {
           subHeading={"Youtube Task Manager"}
         />
       </View>
-      <View style={{ flexDirection: "row", paddingHorizontal: 20 }}>
+      <View
+        style={{
+          flexDirection: "row",
+          paddingHorizontal: 20,
+          marginBottom: 20,
+        }}
+      >
         <FormSelectorBtn
           style={styles.borderLeft}
           backgroundColor="rgba(27,27,51,1)"
