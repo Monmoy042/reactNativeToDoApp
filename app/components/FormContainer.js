@@ -1,8 +1,21 @@
 import React from "react";
-import { View, StyleSheet, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Dimensions,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 
 const FormContainer = ({ children }) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <KeyboardAvoidingView
+      enable
+      behavior={Platform.os === "ios" ? "padding" : null}
+      style={styles.container}
+    >
+      {children}
+    </KeyboardAvoidingView>
+  );
 };
 
 const styles = StyleSheet.create({

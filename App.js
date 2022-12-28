@@ -38,7 +38,9 @@ const App = () => {
         showsHorizontalScrollIndicator={false}
       >
         <LoginForm />
-        <SignUpForm />
+        <ScrollView>
+          <SignUpForm />
+        </ScrollView>
       </ScrollView>
     </View>
   );
