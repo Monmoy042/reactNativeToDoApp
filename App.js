@@ -15,6 +15,7 @@ const { width } = Dimensions.get("window");
 
 const App = () => {
   const animation = useRef(new Animated.Value(0)).current;
+  const scrollView = useRef();
   const rightHeaderOpacity = animation.interpolate({
     inputRange: [0, width],
     outputRange: [1, 0],
@@ -58,14 +59,21 @@ const App = () => {
           style={styles.borderLeft}
           backgroundColor={loginColorInterpolate}
           title="Login"
+          onPress={() => {
+            scrollView.current.scrollTo({ x: 0 });
+          }}
         />
         <FormSelectorBtn
           style={styles.borderRight}
           backgroundColor={signUpColorInterpolate}
           title="Sign up"
+          onPress={() => {
+            scrollView.current.scrollTo({ x: width });
+          }}
         />
       </View>
       <ScrollView
+        ref={scrollView}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}

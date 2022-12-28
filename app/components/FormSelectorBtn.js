@@ -7,10 +7,10 @@ import {
   Animated,
 } from "react-native";
 
-const FormSelectorBtn = ({ title, backgroundColor, style }) => {
+const FormSelectorBtn = ({ title, backgroundColor, style, onPress }) => {
   return (
     <>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={onPress}>
         <Animated.View style={[styles.container, style, { backgroundColor }]}>
           <Text style={styles.title}>{title}</Text>
         </Animated.View>
